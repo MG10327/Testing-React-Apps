@@ -22,12 +22,10 @@ test('counter increments and decrements when the buttons are clicked', () => {
   const message = div.firstChild.querySelector('div')
 
   expect(message.textContent).toBe('Current count: 0')
-
-  // 🐨 get a reference to the increment and decrement buttons:
-  //   💰 div.querySelectorAll('button')
-  // 🐨 get a reference to the message div:
-  //   💰 div.firstChild.querySelector('div')
-  //
+  act(() => increment.click())// When this action is taken
+  expect(message.textContent).toBe('Current count: 1') // Expect this output or the test failed.
+  act(() => decrement.click())
+  expect(message.textContent).toBe('Current count: 0')
   // 🐨 expect the message.textContent toBe 'Current count: 0'
   // 🐨 click the increment button (💰 act(() => increment.click()))
   // 🐨 assert the message.textContent

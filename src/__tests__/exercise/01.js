@@ -26,8 +26,21 @@ test('counter increments and decrements when the buttons are clicked', () => {
   const message = div.firstChild.querySelector('div')
 
   expect(message.textContent).toBe('Current count: 0')
-  act(() => increment.click())// When this action is taken
+
+  const incrementClickEvent = new MouseEvent('click', {
+    bubbles: true, // for event delegation which react needs.
+    cancelable: true,
+    button: 0 // left mouse button
+  })
+  act(() => increment.dispatchEvent(incrementClickEvent))// When this action is taken
   expect(message.textContent).toBe('Current count: 1') // Expect this output or the test failed.
-  act(() => decrement.click())
+
+
+  const decrementClickEvent = new MouseEvent('click', {
+    bubbles: true, // for event delegation which react needs.
+    cancelable: true,
+    button: 0 // left mouse button
+  })
+  act(() => decrement.dispatchEvent(decrementClickEvent))
   expect(message.textContent).toBe('Current count: 0')
 })

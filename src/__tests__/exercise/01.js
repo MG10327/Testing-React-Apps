@@ -26,12 +26,7 @@ test('counter increments and decrements when the buttons are clicked', () => {
   expect(message.textContent).toBe('Current count: 1') // Expect this output or the test failed.
   act(() => decrement.click())
   expect(message.textContent).toBe('Current count: 0')
-  // 🐨 expect the message.textContent toBe 'Current count: 0'
-  // 🐨 click the increment button (💰 act(() => increment.click()))
-  // 🐨 assert the message.textContent
-  // 🐨 click the decrement button (💰 act(() => decrement.click()))
-  // 🐨 assert the message.textContent
-  //
+
   // 🐨 cleanup by removing the div from the page (💰 div.remove())
   // 🦉 If you don't cleanup, then it could impact other tests and/or cause a memory leak
 })

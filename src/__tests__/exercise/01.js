@@ -12,10 +12,10 @@ import Counter from '../../components/counter'
 global.IS_REACT_ACT_ENVIRONMENT = true
 
 test('counter increments and decrements when the buttons are clicked', () => {
-  // 🐨 create a div to render your component to (💰 document.createElement)
-  //
-  // 🐨 append the div to document.body (💰 document.body.append)
-  //
+  let element = document.createElement('div')
+  document.body.append(element)
+
+  const root = createRoot(<Counter />, element)
   // 🐨 use createRoot to render the <Counter /> to the div
   // 🐨 get a reference to the increment and decrement buttons:
   //   💰 div.querySelectorAll('button')

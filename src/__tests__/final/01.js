@@ -24,7 +24,7 @@ test('counter increments and decrements when the buttons are clicked', () => {
   const [decrement, increment] = div.querySelectorAll('button')
   const message = div.firstChild.querySelector('div')
 
-  expect(message.textContent).toBe('Current count: 0')
+  expect(message.textContent).toBe('Current count: 0') // Every time you click expect the text content in the counter to be 0 on initial click, one when you increase the value and 0 when you decrease the value from one.
   act(() => increment.click())
   expect(message.textContent).toBe('Current count: 1')
   act(() => decrement.click())
